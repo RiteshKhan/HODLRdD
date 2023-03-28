@@ -1,0 +1,28 @@
+var my_headers_8hpp =
+[
+    [ "_USE_MATH_DEFINES", "my_headers_8hpp.html#a525335710b53cb064ca56b936120431e", null ],
+    [ "abs_", "my_headers_8hpp.html#a5517db30844a02dd5e2f24c4478e8d2b", null ],
+    [ "Calc_dist", "my_headers_8hpp.html#a0dc8013626d9bd6c41ca2b15aeacf87a", null ],
+    [ "conj_", "my_headers_8hpp.html#a5168e66fa6558bc440f5b5daf7812917", null ],
+    [ "dtype", "my_headers_8hpp.html#a36f6a42632c2093d1f87967dafc1b6b3", null ],
+    [ "dtype_base", "my_headers_8hpp.html#acfa14850bf3c5b37008a235eafa1ec5d", null ],
+    [ "Mat", "my_headers_8hpp.html#ac9df8723119335051ad09d1dc82cb101", null ],
+    [ "Vec", "my_headers_8hpp.html#ad7310d7ffb591629de3cb8703b7f7815", null ],
+    [ "cheb_nodes", "my_headers_8hpp.html#a4ad4a9a8bd86d3c26524bcffb5e67e0e", null ],
+    [ "dot_product", "my_headers_8hpp.html#aaeab6f24924d0ec6ba46afd6d2ab8fc6", null ],
+    [ "getTimeStamp", "my_headers_8hpp.html#aa6d910bf51f18a75deb20c6f0fbba285", null ],
+    [ "mod", "my_headers_8hpp.html#a69c18c9507ef22a89f1f437bcc75baaf", null ],
+    [ "print_vec", "my_headers_8hpp.html#a72d8379e0dec638c922f19b7a2fea31b", null ],
+    [ "relative_error", "my_headers_8hpp.html#a1b4cec5575505bbcb3138df763ddd098", null ],
+    [ "uniform_nodes", "my_headers_8hpp.html#ab933b9dd54a23107b0502bb2fa65ae01", null ],
+    [ "data_directory", "my_headers_8hpp.html#a785fc64a1818af5fa19cf474852df851", null ],
+    [ "eps_ACA", "my_headers_8hpp.html#ad0aa48aa1cc420128c3d31e38475a714", null ],
+    [ "INTERACTION_TYPE_ALLOWED", "my_headers_8hpp.html#af5ce196240d877849078818dc49be3c5", null ],
+    [ "N", "my_headers_8hpp.html#aa6d2142329b3b553ce8a778f8239db33", null ],
+    [ "NDIM", "my_headers_8hpp.html#ac92befc9e919a4caa991cbddc2455f6a", null ],
+    [ "Nmax", "my_headers_8hpp.html#a6a84531a0bbc8e41a34acc4697d8b0cd", null ],
+    [ "nThreads", "my_headers_8hpp.html#a6ebbd97d68f3c1396b25b35ce0041122", null ],
+    [ "numPoints", "my_headers_8hpp.html#a876743604f1c17f0d9f7137274b1a7fd", null ],
+    [ "PI", "my_headers_8hpp.html#a952eac791b596a61bba0a133a3bb439f", null ],
+    [ "SYS_SIZE", "my_headers_8hpp.html#af7a5d16dd8255282429360e6ba868163", null ]
+];
