@@ -1,0 +1,95 @@
+\hypertarget{_h_d_d__matrix_8hpp_source}{}\doxysection{HDD\+\_\+matrix.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_HDD\_matrix\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_HDD\_matrix\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}myHeaders.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}kernel\_function.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}HDD\_tree.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GMRES.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ TODO\ :\ Rectangular\ matrix\ structure\ ??}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Kernel>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_h_o_d_l_rd_d__matrix}{HODLRdD\_matrix}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ N;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_tree}{Tree<Kernel>}}\ *HODLRdD\_tree;\ \textcolor{comment}{//\ this\ is\ private\ to\ the\ matrix}}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classkernel__function}{kernel\_function<Kernel>}}\ *kernel\_func;}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<ptsnD>\ *gridPoints;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classcluster}{cluster}}\ *src;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Constructor\ for\ the\ matrix\ data\ structure.\ Also,\ x1\ and\ x2\ is\ the\ bounding\ box\ of\ the\ cluster\ of\ points\ }}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_h_o_d_l_rd_d__matrix}{HODLRdD\_matrix}}(Kernel*\&\ userkernel,\ std::vector<ptsnD>*\&\ gPoints,\ Eigen::VectorXd\ x1,\ Eigen::VectorXd\ x2)}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}HMATRIX\ START"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ this-\/>kernel\_func\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classkernel__function}{kernel\_function<Kernel>}}(userkernel);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>gridPoints\ =\ gPoints;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ N\ =\ gPoints-\/>size();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Source\ cluster\ needs\ special\ treatment\ i.e.,\ provide\ a\ guide\ list\ that\ maps\ the\ points}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ src\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcluster}{cluster}}(x1,\ x2,\ this-\/>gridPoints);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialise\ the\ grid\ points\ to\ cluste}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ initialises\ the\ grid\ points,\ this\ creates\ the\ hierarchical\ tre}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ hierarchical\ 2\string^d\ tree}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ HODLRdD\_tree\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_tree}{Tree<Kernel>}}(src,\ gPoints,\ kernel\_func);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{}HMATRIX\ DONE"{}}\ <<\ std::endl;\ }
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Size\ of\ the\ matrix}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ get\_size()\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ N;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Assemble\ the\ matrix\ operators\ }}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ Assemble\_matrix\_operators()\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ HODLRdD\_tree-\/>Initialise\_tree();}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ mat-\/vec\ product\ or\ mat-\/mat\ product}}
+\DoxyCodeLine{00043\ \ \ \ \ Vec\ operator\ *\ (Vec\ x)}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Vec\ b\ =\ HODLRdD\_tree-\/>mat\_vec(x);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Assemble\ the\ operators\ and\ access\ to\ the\ Tree\ structure}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ solve\ using\ GMRES}}
+\DoxyCodeLine{00051\ \ \ \ \ Vec\ solve(Vec\&\ b)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Vec\ x\ =\ Vec::Zero(b.size());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ x\ =\ b;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_h_o_d_l_rd_d__matrix}{HODLRdD\_matrix<Kernel>}}\ *mat\_obj;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ mat\_obj\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classiter_solver}{iterSolver<HODLRdD\_matrix<Kernel>}}\ >\ solve\_obj(100,\ N,\ eps\_ACA);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ solve\_obj.set\_output\_file(\textcolor{stringliteral}{"{}gmres\_out.txt"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ solve\_obj.GMRES(mat\_obj,\ x,\ b);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}GMRES\ status\ :\ "{}}\ <<\ k\ <<\ std::endl;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Routine\ to\ compute\ the\ GMRES\ iterations}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_matrix\_details()\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}============HODLRnD================="{}}\ <<\ std::endl;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ HODLRdD\_tree-\/>print\_tree\_details();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===================================="{}}\ <<\ std::endl;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_matrix\_statistics()\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ n\_FLOP\ =\ 0.0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MAX\_RANK\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ compression\_ratio\ =\ 1.0/(double(N)*double(N));}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ double\ is\ considered\ to\ consume\ 8\ bytes\ of\ physical\ memory}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ memory\_gb\ =\ 8\ *\ pow(10,-\/9);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ HODLRdD\_tree-\/>get\_stat(n\_FLOP,\ MAX\_RANK);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ compression\_ratio\ *=\ n\_FLOP;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ memory\_gb\ *=\ n\_FLOP;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::cout\ <<\ getTimeStamp()\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Memory\ (in\ GB)\ :\ "{}}\ <<\ memory\_gb\ <<\ std::endl;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ FLOP\ :\ "{}}\ <<\ n\_FLOP\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Compression\ Ratio\ :\ "{}}\ <<\ compression\_ratio\ <<\ std::endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Maximum\ rank\ across\ the\ Tree\ :\ "{}}\ <<\ MAX\_RANK\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Time\ to\ Initialize\ (in\ s)\ :\ "{}}\ <<\ HODLRdD\_tree-\/>get\_Init\_time()\ <<\ std::endl;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Matrix-\/Vector\ time\ (in\ s)\ :\ "{}}\ <<\ HODLRdD\_tree-\/>get\_mat\_vec\_time()\ <<\ std::endl;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Destructor}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_h_o_d_l_rd_d__matrix}{\string~HODLRdD\_matrix}}()\{}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

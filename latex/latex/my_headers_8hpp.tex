@@ -1,0 +1,271 @@
+\hypertarget{my_headers_8hpp}{}\doxysection{my\+Headers.\+hpp File Reference}
+\label{my_headers_8hpp}\index{myHeaders.hpp@{myHeaders.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Sparse$>$}\newline
+Include dependency graph for my\+Headers.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_headers_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_headers_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_vec__ops}{Vec\+\_\+ops}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{my_headers_8hpp_a525335710b53cb064ca56b936120431e}{\+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}}
+\item 
+\#define \mbox{\hyperlink{my_headers_8hpp_a5517db30844a02dd5e2f24c4478e8d2b}{abs\+\_\+}}(x)~((x $<$ 0) ? (-\/x) \+: (x))
+\item 
+\#define \mbox{\hyperlink{my_headers_8hpp_a5168e66fa6558bc440f5b5daf7812917}{conj\+\_\+}}(x)~(x)
+\item 
+\#define \mbox{\hyperlink{my_headers_8hpp_a0dc8013626d9bd6c41ca2b15aeacf87a}{Calc\+\_\+dist}}(x1,  y1,  x2,  y2)~double(sqrt(pow(x1 -\/ x2, 2) + pow(y1 -\/ y2, 2)))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{my_headers_8hpp_a36f6a42632c2093d1f87967dafc1b6b3}{dtype}} = double
+\item 
+using \mbox{\hyperlink{my_headers_8hpp_acfa14850bf3c5b37008a235eafa1ec5d}{dtype\+\_\+base}} = double
+\item 
+using \mbox{\hyperlink{my_headers_8hpp_ac9df8723119335051ad09d1dc82cb101}{Mat}} = Eigen\+::\+Matrix\+Xd
+\item 
+using \mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} = Eigen\+::\+Vector\+Xd
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{my_headers_8hpp_a69c18c9507ef22a89f1f437bcc75baaf}{mod}} (int a, int b)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{my_headers_8hpp_a4ad4a9a8bd86d3c26524bcffb5e67e0e}{cheb\+\_\+nodes}} (double a, double b, int n)
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{my_headers_8hpp_ab933b9dd54a23107b0502bb2fa65ae01}{uniform\+\_\+nodes}} (double a, double b, int n)
+\item 
+std\+::string \mbox{\hyperlink{my_headers_8hpp_aa6d910bf51f18a75deb20c6f0fbba285}{get\+Time\+Stamp}} ()
+\item 
+\mbox{\hyperlink{my_headers_8hpp_acfa14850bf3c5b37008a235eafa1ec5d}{dtype\+\_\+base}} \mbox{\hyperlink{namespace_vec__ops_a1b4cec5575505bbcb3138df763ddd098}{Vec\+\_\+ops\+::relative\+\_\+error}} (\mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} \&X\+\_\+ori, \mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} \&X\+\_\+comp)
+\item 
+\mbox{\hyperlink{my_headers_8hpp_a36f6a42632c2093d1f87967dafc1b6b3}{dtype}} \mbox{\hyperlink{namespace_vec__ops_aaeab6f24924d0ec6ba46afd6d2ab8fc6}{Vec\+\_\+ops\+::dot\+\_\+product}} (const \mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} \&x, const \mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{my_headers_8hpp_a72d8379e0dec638c922f19b7a2fea31b}{print\+\_\+vec}} (std\+::vector$<$ T $>$ \&vec\+\_\+to\+\_\+print)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{my_headers_8hpp_a785fc64a1818af5fa19cf474852df851}{data\+\_\+directory}} = \char`\"{}/Users/kandappanva/Documents/Git\+Hub/HODLRnD/data/\char`\"{}
+\item 
+const double \mbox{\hyperlink{my_headers_8hpp_a952eac791b596a61bba0a133a3bb439f}{PI}} = 4.\+0 $\ast$ atan(1)
+\item 
+const int \mbox{\hyperlink{my_headers_8hpp_a6ebbd97d68f3c1396b25b35ce0041122}{n\+Threads}} = 20
+\item 
+const int \mbox{\hyperlink{my_headers_8hpp_ac92befc9e919a4caa991cbddc2455f6a}{NDIM}} = 4
+\item 
+const int \mbox{\hyperlink{my_headers_8hpp_a6a84531a0bbc8e41a34acc4697d8b0cd}{Nmax}} = 1000
+\item 
+int \mbox{\hyperlink{my_headers_8hpp_a876743604f1c17f0d9f7137274b1a7fd}{num\+Points}} = 10
+\item 
+const int \mbox{\hyperlink{my_headers_8hpp_af5ce196240d877849078818dc49be3c5}{INTERACTION\+\_\+\+TYPE\+\_\+\+ALLOWED}} = 1
+\item 
+const double \mbox{\hyperlink{my_headers_8hpp_ad0aa48aa1cc420128c3d31e38475a714}{eps\+\_\+\+ACA}} = pow(10,-\/10)
+\item 
+const int \mbox{\hyperlink{my_headers_8hpp_af7a5d16dd8255282429360e6ba868163}{SYS\+\_\+\+SIZE}} = 2 $\ast$ \mbox{\hyperlink{my_headers_8hpp_a6a84531a0bbc8e41a34acc4697d8b0cd}{Nmax}}
+\item 
+size\+\_\+t \mbox{\hyperlink{my_headers_8hpp_aa6d2142329b3b553ce8a778f8239db33}{N}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{my_headers_8hpp_a525335710b53cb064ca56b936120431e}\label{my_headers_8hpp_a525335710b53cb064ca56b936120431e}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}}
+\index{\_USE\_MATH\_DEFINES@{\_USE\_MATH\_DEFINES}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{\_USE\_MATH\_DEFINES}{\_USE\_MATH\_DEFINES}}
+{\footnotesize\ttfamily \#define \+\_\+\+USE\+\_\+\+MATH\+\_\+\+DEFINES}
+
+\mbox{\Hypertarget{my_headers_8hpp_a5517db30844a02dd5e2f24c4478e8d2b}\label{my_headers_8hpp_a5517db30844a02dd5e2f24c4478e8d2b}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!abs\_@{abs\_}}
+\index{abs\_@{abs\_}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{abs\_}{abs\_}}
+{\footnotesize\ttfamily \#define abs\+\_\+(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x $<$ 0) ? (-\/x) \+: (x))}
+
+\mbox{\Hypertarget{my_headers_8hpp_a0dc8013626d9bd6c41ca2b15aeacf87a}\label{my_headers_8hpp_a0dc8013626d9bd6c41ca2b15aeacf87a}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!Calc\_dist@{Calc\_dist}}
+\index{Calc\_dist@{Calc\_dist}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{Calc\_dist}{Calc\_dist}}
+{\footnotesize\ttfamily \#define Calc\+\_\+dist(\begin{DoxyParamCaption}\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})~double(sqrt(pow(x1 -\/ x2, 2) + pow(y1 -\/ y2, 2)))}
+
+\mbox{\Hypertarget{my_headers_8hpp_a5168e66fa6558bc440f5b5daf7812917}\label{my_headers_8hpp_a5168e66fa6558bc440f5b5daf7812917}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!conj\_@{conj\_}}
+\index{conj\_@{conj\_}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{conj\_}{conj\_}}
+{\footnotesize\ttfamily \#define conj\+\_\+(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{my_headers_8hpp_a36f6a42632c2093d1f87967dafc1b6b3}\label{my_headers_8hpp_a36f6a42632c2093d1f87967dafc1b6b3}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!dtype@{dtype}}
+\index{dtype@{dtype}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{dtype}{dtype}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{my_headers_8hpp_a36f6a42632c2093d1f87967dafc1b6b3}{dtype}} =  double}
+
+\mbox{\Hypertarget{my_headers_8hpp_acfa14850bf3c5b37008a235eafa1ec5d}\label{my_headers_8hpp_acfa14850bf3c5b37008a235eafa1ec5d}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!dtype\_base@{dtype\_base}}
+\index{dtype\_base@{dtype\_base}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{dtype\_base}{dtype\_base}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{my_headers_8hpp_acfa14850bf3c5b37008a235eafa1ec5d}{dtype\+\_\+base}} =  double}
+
+\mbox{\Hypertarget{my_headers_8hpp_ac9df8723119335051ad09d1dc82cb101}\label{my_headers_8hpp_ac9df8723119335051ad09d1dc82cb101}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!Mat@{Mat}}
+\index{Mat@{Mat}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{Mat}{Mat}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{my_headers_8hpp_ac9df8723119335051ad09d1dc82cb101}{Mat}} =  Eigen\+::\+Matrix\+Xd}
+
+\mbox{\Hypertarget{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}\label{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!Vec@{Vec}}
+\index{Vec@{Vec}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{Vec}{Vec}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{my_headers_8hpp_ad7310d7ffb591629de3cb8703b7f7815}{Vec}} =  Eigen\+::\+Vector\+Xd}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my_headers_8hpp_a4ad4a9a8bd86d3c26524bcffb5e67e0e}\label{my_headers_8hpp_a4ad4a9a8bd86d3c26524bcffb5e67e0e}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!cheb\_nodes@{cheb\_nodes}}
+\index{cheb\_nodes@{cheb\_nodes}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{cheb\_nodes()}{cheb\_nodes()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd cheb\+\_\+nodes (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{my_headers_8hpp_aa6d910bf51f18a75deb20c6f0fbba285}\label{my_headers_8hpp_aa6d910bf51f18a75deb20c6f0fbba285}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!getTimeStamp@{getTimeStamp}}
+\index{getTimeStamp@{getTimeStamp}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{getTimeStamp()}{getTimeStamp()}}
+{\footnotesize\ttfamily std\+::string get\+Time\+Stamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_headers_8hpp_aa6d910bf51f18a75deb20c6f0fbba285_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{my_headers_8hpp_a69c18c9507ef22a89f1f437bcc75baaf}\label{my_headers_8hpp_a69c18c9507ef22a89f1f437bcc75baaf}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!mod@{mod}}
+\index{mod@{mod}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{mod()}{mod()}}
+{\footnotesize\ttfamily int mod (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{my_headers_8hpp_a72d8379e0dec638c922f19b7a2fea31b}\label{my_headers_8hpp_a72d8379e0dec638c922f19b7a2fea31b}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!print\_vec@{print\_vec}}
+\index{print\_vec@{print\_vec}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{print\_vec()}{print\_vec()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void print\+\_\+vec (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{vec\+\_\+to\+\_\+print }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my_headers_8hpp_ab933b9dd54a23107b0502bb2fa65ae01}\label{my_headers_8hpp_ab933b9dd54a23107b0502bb2fa65ae01}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!uniform\_nodes@{uniform\_nodes}}
+\index{uniform\_nodes@{uniform\_nodes}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{uniform\_nodes()}{uniform\_nodes()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd uniform\+\_\+nodes (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{my_headers_8hpp_ab933b9dd54a23107b0502bb2fa65ae01_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{my_headers_8hpp_a785fc64a1818af5fa19cf474852df851}\label{my_headers_8hpp_a785fc64a1818af5fa19cf474852df851}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!data\_directory@{data\_directory}}
+\index{data\_directory@{data\_directory}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{data\_directory}{data\_directory}}
+{\footnotesize\ttfamily const std\+::string data\+\_\+directory = \char`\"{}/Users/kandappanva/Documents/Git\+Hub/HODLRnD/data/\char`\"{}}
+
+\mbox{\Hypertarget{my_headers_8hpp_ad0aa48aa1cc420128c3d31e38475a714}\label{my_headers_8hpp_ad0aa48aa1cc420128c3d31e38475a714}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!eps\_ACA@{eps\_ACA}}
+\index{eps\_ACA@{eps\_ACA}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{eps\_ACA}{eps\_ACA}}
+{\footnotesize\ttfamily const double eps\+\_\+\+ACA = pow(10,-\/10)}
+
+\mbox{\Hypertarget{my_headers_8hpp_af5ce196240d877849078818dc49be3c5}\label{my_headers_8hpp_af5ce196240d877849078818dc49be3c5}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!INTERACTION\_TYPE\_ALLOWED@{INTERACTION\_TYPE\_ALLOWED}}
+\index{INTERACTION\_TYPE\_ALLOWED@{INTERACTION\_TYPE\_ALLOWED}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{INTERACTION\_TYPE\_ALLOWED}{INTERACTION\_TYPE\_ALLOWED}}
+{\footnotesize\ttfamily const int INTERACTION\+\_\+\+TYPE\+\_\+\+ALLOWED = 1}
+
+\mbox{\Hypertarget{my_headers_8hpp_aa6d2142329b3b553ce8a778f8239db33}\label{my_headers_8hpp_aa6d2142329b3b553ce8a778f8239db33}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!N@{N}}
+\index{N@{N}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily size\+\_\+t N = 1}
+
+\mbox{\Hypertarget{my_headers_8hpp_ac92befc9e919a4caa991cbddc2455f6a}\label{my_headers_8hpp_ac92befc9e919a4caa991cbddc2455f6a}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!NDIM@{NDIM}}
+\index{NDIM@{NDIM}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{NDIM}{NDIM}}
+{\footnotesize\ttfamily const int NDIM = 4}
+
+\mbox{\Hypertarget{my_headers_8hpp_a6a84531a0bbc8e41a34acc4697d8b0cd}\label{my_headers_8hpp_a6a84531a0bbc8e41a34acc4697d8b0cd}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!Nmax@{Nmax}}
+\index{Nmax@{Nmax}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{Nmax}{Nmax}}
+{\footnotesize\ttfamily const int Nmax = 1000}
+
+\mbox{\Hypertarget{my_headers_8hpp_a6ebbd97d68f3c1396b25b35ce0041122}\label{my_headers_8hpp_a6ebbd97d68f3c1396b25b35ce0041122}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!nThreads@{nThreads}}
+\index{nThreads@{nThreads}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{nThreads}{nThreads}}
+{\footnotesize\ttfamily const int n\+Threads = 20}
+
+\mbox{\Hypertarget{my_headers_8hpp_a876743604f1c17f0d9f7137274b1a7fd}\label{my_headers_8hpp_a876743604f1c17f0d9f7137274b1a7fd}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!numPoints@{numPoints}}
+\index{numPoints@{numPoints}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{numPoints}{numPoints}}
+{\footnotesize\ttfamily int num\+Points = 10}
+
+\mbox{\Hypertarget{my_headers_8hpp_a952eac791b596a61bba0a133a3bb439f}\label{my_headers_8hpp_a952eac791b596a61bba0a133a3bb439f}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!PI@{PI}}
+\index{PI@{PI}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const double PI = 4.\+0 $\ast$ atan(1)}
+
+\mbox{\Hypertarget{my_headers_8hpp_af7a5d16dd8255282429360e6ba868163}\label{my_headers_8hpp_af7a5d16dd8255282429360e6ba868163}} 
+\index{myHeaders.hpp@{myHeaders.hpp}!SYS\_SIZE@{SYS\_SIZE}}
+\index{SYS\_SIZE@{SYS\_SIZE}!myHeaders.hpp@{myHeaders.hpp}}
+\doxysubsubsection{\texorpdfstring{SYS\_SIZE}{SYS\_SIZE}}
+{\footnotesize\ttfamily const int SYS\+\_\+\+SIZE = 2 $\ast$ \mbox{\hyperlink{my_headers_8hpp_a6a84531a0bbc8e41a34acc4697d8b0cd}{Nmax}}}
+
