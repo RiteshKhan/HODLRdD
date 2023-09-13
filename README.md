@@ -2,5 +2,5 @@
 
 Documentation of HODLRdD 
     - [Code](https://github.com/SAFRAN-LAB/HODLRdD)
-    - [Documentation](https://github.com/RiteshKhan/hodlrdd)
+    - [Documentation](https://github.com/RiteshKhan/HODLRdD)
     - [Article](https://arxiv.org/pdf/2209.05819)
